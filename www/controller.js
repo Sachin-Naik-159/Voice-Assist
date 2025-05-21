@@ -6,13 +6,22 @@ $(document).ready(function () {
         function Listining() {
             $(".siri-message").attr("hidden", false);
             $(".siri-message2").attr("hidden", true);
+            $(".siri-message3").attr("hidden", true);
         }
         function Recognizing() {
             $(".siri-message").attr("hidden", true);
             $(".siri-message2").attr("hidden", false);
+            $(".siri-message3").attr("hidden", true);
         }
         function Speaking() {
+            $(".siri-message").attr("hidden", true);
             $(".siri-message2").attr("hidden", true);
+            $(".siri-message3").attr("hidden", false);
+        }
+        function Nothing() {
+            $(".siri-message").attr("hidden", false);
+            $(".siri-message2").attr("hidden", true);
+            $(".siri-message3").attr("hidden", true);
         }
 
         switch (value) {
@@ -22,9 +31,14 @@ $(document).ready(function () {
             case 2:
                 Recognizing()
                 break;
-
-            default:
+            case 3:
                 Speaking()
+                break;
+            case 4:
+                Nothing()
+                break;
+            default:
+                Listining()
         }
 
     }

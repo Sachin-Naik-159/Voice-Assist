@@ -32,8 +32,8 @@ def takecommand():
         eel.DisplayMessage('recognizing....')
         eel.CustomMessage (2)
         query = r.recognize_google(audio, language='en-in')
-        print(f"user said: {query}")           
-        eel.CustomMessage (3)
+        # eel.CustomMessage (3)
+        # print(f"user said: {query}")
         eel.DisplayMessage(query)
         time.sleep(2)
         # speak(query)
@@ -54,12 +54,16 @@ def allCommands():
 
     if "open" in query:
         from engine.features import openCommand
+        eel.CustomMessage (3)
         openCommand(query)
-    elif "on youtube":
+    elif "on youtube" in query:
         from engine.features import PlayYoutube
+        eel.CustomMessage (3)
         PlayYoutube(query)
     else:
+        eel.CustomMessage (4)
         print("Not run")
+        eel.ShowHood()
 
     time.sleep(2)
     eel.ShowHood()
