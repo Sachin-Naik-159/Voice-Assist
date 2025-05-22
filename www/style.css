@@ -83,7 +83,7 @@ body {
 }
 
 /* Input Filed Start*/
-#TextInput {
+/* #TextInput {
     background-color: #181818a8;
     border-color: blue;
     box-shadow: 0 0 20px rgb(25, 0, 255),
@@ -92,7 +92,7 @@ body {
     color: white;
     padding: 3px 0px 3px 20px;
     margin: 0px 20%;
-}
+} */
 
 .input-field {
     background-color: transparent;

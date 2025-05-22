@@ -67,3 +67,7 @@ def allCommands():
 
     time.sleep(2)
     eel.ShowHood()
+
+@eel.expose
+def chatMessage(value):
+    print(value)

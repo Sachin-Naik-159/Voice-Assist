@@ -36,12 +36,47 @@ $(document).ready(function () {
         },
     });
 
-    //Mic button click event
-    $("#MicBtn").click(function () {
+
+    function basicAnim() {
         eel.playAssistantSound()
         $("#Oval").attr("hidden", true);
         $("#SiriWave").attr("hidden", false);
+    }
+    //Mic button click event
+    $("#MicBtn").click(function () {
+        basicAnim()
         eel.allCommands()()
     });
 
+    //Chat button click
+    $("#ChatBtn").click(function () {
+        basicAnim()
+        const chatbox = document.getElementById('chatbox')
+        eel.chatMessage(chatbox)()
+    });
+
+    //Listen to Enter key
+    $().keypress(function (e) {
+        if (e.keyCode == 13) {
+            print("working")
+            basicAnim()
+            eel.allCommands()()
+        }
+    })
 });
+
+
+
+
+
+// const chatbox = document.getElementById('chatbox');
+//         chatbox.addEventListener('keydown', function (event) {
+//             if (event.key === 'Enter') {
+//                 event.preventDefault(); // Prevent the default action (form submission)
+//                 const inputValue = chatbox.value.trim(); // Get the value and trim whitespace
+//                 if (inputValue.length > 0) {
+//                     console.log('Entered chatbox value:', inputValue); // Log the value to the console
+//                     eel.chatMessage(inputValue)()
+//                 }
+//             }
+//         });
